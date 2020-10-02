@@ -59,7 +59,7 @@ VALUES ('11111-11111',NOW(),'4567-2222', '210');
 
 ```
 
-
+...
 KVUser@cqlsh:killrvideo> SELECT * FROM claim_by_party ;
 
  partyid   | claimid     | claimdate                            | party_name
@@ -81,7 +81,7 @@ KVUser@cqlsh:killrvideo> SELECT * FROM party_by_claim ;
  12121-12121 | 2345-1212 |       100 | c12f88a0-04bd-11eb-b28c-5bdb865424ac
 
 (4 rows)
-
+...
 ...
 ...
 ...
@@ -94,6 +94,7 @@ KVUser@cqlsh:killrvideo> SELECT * FROM party_by_claim ;
 Examples from the workshop:
 
 ```
+...
 KVUser@cqlsh:killrvideo> UPDATE party_by_claim
               ... SET claim_amt = '300'
               ... WHERE claimid ='23232-23232' and partyid ='3456-1111';
@@ -107,7 +108,7 @@ KVUser@cqlsh:killrvideo> SELECT * FROM party_by_claim ;
  12121-12121 | 2345-1212 |       100 | c12f88a0-04bd-11eb-b28c-5bdb865424ac
 
 (4 rows)
-```
+...
 
 ```
 KVUser@cqlsh:killrvideo> DELETE from party_by_claim WHERE claimid ='12345-67890' and partyid ='1234-2345';
