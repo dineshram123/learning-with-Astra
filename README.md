@@ -1,40 +1,30 @@
-# Welcome to Learning with Astra #
-
-If you have attended recently our workshops here, we ask you to create your own Github repo showing off your learning journey with Astra. You could use this repo here as a start: fork it and update it with your own examples.
-
 ## Explain your use case ##
 
-Pick an example application that you could see on Astra and describe the entities and queries for it. 
-
-Include diagrams, screenshots etc to make it more interesting and better convey your ideas.
+Created two tables, one as claim_by_party and another as party_by_claim to show claims made by subscribers and subscribers included in claims.
 
 ## Create your own tables on Astra ##
 
 Example tables that we used in the workshop:
 
 ```
-CREATE TABLE IF NOT EXISTS comments_by_user (
-    userid uuid,
-    commentid timeuuid,
-    videoid uuid,
-    comment text,
-    PRIMARY KEY ((userid), commentid)
-) WITH CLUSTERING ORDER BY (commentid DESC);
+CREATE TABLE IF NOT EXISTS claim_by_party (
+    partyid uuid,
+    claimdate timeuuid,
+    claimid uuid,
+    party_name text,
+    PRIMARY KEY ((partyid), claimid)
+) WITH CLUSTERING ORDER BY (claimid DESC);
 
-CREATE TABLE IF NOT EXISTS comments_by_video (
-    videoid   uuid,
-    commentid timeuuid,
-    userid    uuid,
-    comment   text,
-    PRIMARY KEY ((videoid), commentid)
-) WITH CLUSTERING ORDER BY (commentid DESC);
+CREATE TABLE IF NOT EXISTS party_by_claim (
+    claimid   uuid,
+    claimdate timeuuid,
+    partyid    uuid,
+    claim_amt   text,
+    PRIMARY KEY ((claimid), partyid)
+) WITH CLUSTERING ORDER BY (partyid DESC);
 ```
 
-Show us your own tables - for the data model of your choice.
 
-```
-Update with your own table
-```
 
 ## Insert some data ##
 
